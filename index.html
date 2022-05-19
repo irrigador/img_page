@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="container"></div>
+
+
+            <article> 
+                <li>
+                    <img src="https://uploaddeimagens.com.br/images/003/873/253/original/img1.png?1652921207" 
+                         alt="Minha Figura">
+                </li>
+
+                <li>
+                    <img src="https://uploaddeimagens.com.br/images/003/873/259/full/img2.png?1652921289" 
+                         alt="Minha Figura">
+                </li>
+                
+                <li>
+                    <img src="https://uploaddeimagens.com.br/images/003/873/263/original/img4.png?1652921360" 
+                         alt="Minha Figura">
+                </li>
+                <li>
+                    <img src="https://uploaddeimagens.com.br/images/003/873/268/full/img5.png?1652921411" 
+                         alt="Minha Figura">
+                </li>
+                <li>
+                    <img src="https://uploaddeimagens.com.br/images/003/873/271/original/img3.png?1652921462" 
+                         alt="Minha Figura">
+                </li>
+                
+            </article>
+
+    <script>
+        (async() => {
+            const response = await fetch('./instagram.json')
+            const data = await response.json();
+            
+            const htmlList = data
+            .map( ({ src })  => `<li><img src="${src}"></li>`)
+            .join('');
+
+            document.querySelector('.container').innerHTML = htmlList;
+        })();
+    </script>
+
+
+</body>
+</html>

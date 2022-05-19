@@ -1,0 +1,16 @@
+
+.container {
+    display: flex;
+    gap: .4rem;
+        }
+        
+li {    
+    list-style: none;
+        }
+        
+li img {
+    width: 100px;
+    height: 100;
+    object-fit: cover;
+        }
+
